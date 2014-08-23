@@ -11,7 +11,7 @@
 // #import <ParseFacebookUtils/PFFacebookUtils.h>
 
 #import "ParseStarterProjectAppDelegate.h"
-#import "ParseStarterProjectViewController.h"
+#import "GSMainNavigationController.h"
 
 @implementation ParseStarterProjectAppDelegate
 
@@ -30,7 +30,7 @@
     [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
 
     // Override point for customization after application launch.
-
+    self.viewController = [[GSMainNavigationController alloc] init];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
 

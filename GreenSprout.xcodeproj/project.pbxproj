@@ -20,14 +20,17 @@
 		09ABC07F13A1D52D009C3FCF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ABC07E13A1D52D009C3FCF /* main.m */; };
 		09ABC08213A1D52D009C3FCF /* ParseStarterProjectAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ABC08113A1D52D009C3FCF /* ParseStarterProjectAppDelegate.m */; };
 		09ABC08513A1D52E009C3FCF /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09ABC08313A1D52D009C3FCF /* MainWindow.xib */; };
-		09ABC08813A1D52E009C3FCF /* ParseStarterProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ABC08713A1D52E009C3FCF /* ParseStarterProjectViewController.m */; };
-		09ABC08B13A1D52E009C3FCF /* ParseStarterProjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09ABC08913A1D52E009C3FCF /* ParseStarterProjectViewController.xib */; };
 		09BEF34C13D51C3F001BBCDB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BEF34B13D51C3F001BBCDB /* Security.framework */; };
 		2FCDD6B014A573F500295AAC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCDD6AF14A573F500295AAC /* QuartzCore.framework */; };
 		4998650515BF305000803E05 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4998650415BF305000803E05 /* StoreKit.framework */; };
 		743D7B6D157DA60100084B67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 743D7B6C157DA60100084B67 /* CoreGraphics.framework */; };
 		8112B17F19741BE700CA11B8 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8112B17E19741BE700CA11B8 /* ParseFacebookUtils.framework */; };
 		817AD67C196B009E0014C796 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817AD67B196B009E0014C796 /* Bolts.framework */; };
+		BDED087119A9410C005ACCF6 /* GSCitiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDED086F19A9410C005ACCF6 /* GSCitiesTableViewController.m */; };
+		BDED087219A9410C005ACCF6 /* GSCitiesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDED087019A9410C005ACCF6 /* GSCitiesTableViewController.xib */; };
+		BDED087619A94125005ACCF6 /* GSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDED087419A94125005ACCF6 /* GSHomeViewController.m */; };
+		BDED087719A94125005ACCF6 /* GSHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDED087519A94125005ACCF6 /* GSHomeViewController.xib */; };
+		BDED087A19A9513F005ACCF6 /* GSMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDED087919A9513F005ACCF6 /* GSMainNavigationController.m */; };
 		C4C51B571613CE0800959FDC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B541613CE0800959FDC /* Default.png */; };
 		C4C51B581613CE0800959FDC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B551613CE0800959FDC /* Default-568h@2x.png */; };
 		C4C51B591613CE0800959FDC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B561613CE0800959FDC /* Default@2x.png */; };
@@ -52,9 +55,6 @@
 		09ABC08013A1D52D009C3FCF /* ParseStarterProjectAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParseStarterProjectAppDelegate.h; sourceTree = "<group>"; };
 		09ABC08113A1D52D009C3FCF /* ParseStarterProjectAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParseStarterProjectAppDelegate.m; sourceTree = "<group>"; };
 		09ABC08413A1D52E009C3FCF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		09ABC08613A1D52E009C3FCF /* ParseStarterProjectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParseStarterProjectViewController.h; sourceTree = "<group>"; };
-		09ABC08713A1D52E009C3FCF /* ParseStarterProjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParseStarterProjectViewController.m; sourceTree = "<group>"; };
-		09ABC08A13A1D52E009C3FCF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ParseStarterProjectViewController.xib; sourceTree = "<group>"; };
 		09BEF34B13D51C3F001BBCDB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		2FCDD6AF14A573F500295AAC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4998650415BF305000803E05 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -66,6 +66,14 @@
 		8112B17E19741BE700CA11B8 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		817AD67B196B009E0014C796 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		97E18B1E1624CB5700B17A67 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BDED086E19A9410C005ACCF6 /* GSCitiesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSCitiesTableViewController.h; sourceTree = "<group>"; };
+		BDED086F19A9410C005ACCF6 /* GSCitiesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSCitiesTableViewController.m; sourceTree = "<group>"; };
+		BDED087019A9410C005ACCF6 /* GSCitiesTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSCitiesTableViewController.xib; sourceTree = "<group>"; };
+		BDED087319A94125005ACCF6 /* GSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSHomeViewController.h; sourceTree = "<group>"; };
+		BDED087419A94125005ACCF6 /* GSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSHomeViewController.m; sourceTree = "<group>"; };
+		BDED087519A94125005ACCF6 /* GSHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSHomeViewController.xib; sourceTree = "<group>"; };
+		BDED087819A9513F005ACCF6 /* GSMainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSMainNavigationController.h; sourceTree = "<group>"; };
+		BDED087919A9513F005ACCF6 /* GSMainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSMainNavigationController.m; sourceTree = "<group>"; };
 		C4C51B541613CE0800959FDC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		C4C51B551613CE0800959FDC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C4C51B561613CE0800959FDC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -146,9 +154,14 @@
 				09ABC08013A1D52D009C3FCF /* ParseStarterProjectAppDelegate.h */,
 				09ABC08113A1D52D009C3FCF /* ParseStarterProjectAppDelegate.m */,
 				09ABC08313A1D52D009C3FCF /* MainWindow.xib */,
-				09ABC08613A1D52E009C3FCF /* ParseStarterProjectViewController.h */,
-				09ABC08713A1D52E009C3FCF /* ParseStarterProjectViewController.m */,
-				09ABC08913A1D52E009C3FCF /* ParseStarterProjectViewController.xib */,
+				BDED087819A9513F005ACCF6 /* GSMainNavigationController.h */,
+				BDED087919A9513F005ACCF6 /* GSMainNavigationController.m */,
+				BDED086E19A9410C005ACCF6 /* GSCitiesTableViewController.h */,
+				BDED086F19A9410C005ACCF6 /* GSCitiesTableViewController.m */,
+				BDED087019A9410C005ACCF6 /* GSCitiesTableViewController.xib */,
+				BDED087319A94125005ACCF6 /* GSHomeViewController.h */,
+				BDED087419A94125005ACCF6 /* GSHomeViewController.m */,
+				BDED087519A94125005ACCF6 /* GSHomeViewController.xib */,
 				09ABC07813A1D52D009C3FCF /* Supporting Files */,
 			);
 			path = ParseStarterProject;
@@ -220,8 +233,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				09ABC07C13A1D52D009C3FCF /* InfoPlist.strings in Resources */,
+				BDED087719A94125005ACCF6 /* GSHomeViewController.xib in Resources */,
 				09ABC08513A1D52E009C3FCF /* MainWindow.xib in Resources */,
-				09ABC08B13A1D52E009C3FCF /* ParseStarterProjectViewController.xib in Resources */,
+				BDED087219A9410C005ACCF6 /* GSCitiesTableViewController.xib in Resources */,
 				09144A7313C2997E00388B00 /* Entitlements.plist in Resources */,
 				C4C51B571613CE0800959FDC /* Default.png in Resources */,
 				C4C51B581613CE0800959FDC /* Default-568h@2x.png in Resources */,
@@ -236,9 +250,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDED087A19A9513F005ACCF6 /* GSMainNavigationController.m in Sources */,
 				09ABC07F13A1D52D009C3FCF /* main.m in Sources */,
 				09ABC08213A1D52D009C3FCF /* ParseStarterProjectAppDelegate.m in Sources */,
-				09ABC08813A1D52E009C3FCF /* ParseStarterProjectViewController.m in Sources */,
+				BDED087619A94125005ACCF6 /* GSHomeViewController.m in Sources */,
+				BDED087119A9410C005ACCF6 /* GSCitiesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,14 +275,6 @@
 				09ABC08413A1D52E009C3FCF /* en */,
 			);
 			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
-		09ABC08913A1D52E009C3FCF /* ParseStarterProjectViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				09ABC08A13A1D52E009C3FCF /* en */,
-			);
-			name = ParseStarterProjectViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
