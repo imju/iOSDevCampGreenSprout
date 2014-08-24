@@ -39,7 +39,9 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     UINib *detailsCell = [UINib nibWithNibName:@"GSBizDetailsCell" bundle:nil];
+    UINib *classCell = [UINib nibWithNibName:@"GSBizClasses" bundle:nil];
     [self.tableView registerNib:detailsCell forCellReuseIdentifier:@"detailsCell"];
+    [self.tableView registerNib:classCell forCellReuseIdentifier:@"classCell"];
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
@@ -72,7 +74,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 7;
+    return 4;
 }
 
 
@@ -95,46 +97,55 @@
            [cell.contentView addSubview:scaledImgV];
            break;
         }
+//        case 1:{
+//           cell = [tableView dequeueReusableCellWithIdentifier:@"detailsCell" forIndexPath:indexPath];
+//           NSString *contentText = nil;
+//           contentText = self.object[@"location"];
+//           ((GSBizDetailsCell *)cell).content.text = contentText;
+//           [((GSBizDetailsCell *)cell).content sizeToFit]; //added
+//           [((GSBizDetailsCell *)cell).content layoutIfNeeded]; //added
+//           break;
+//        }
         case 1:{
-           cell = [tableView dequeueReusableCellWithIdentifier:@"detailsCell" forIndexPath:indexPath];
-           NSString *contentText = nil;
-           contentText = self.object[@"location"];
-           ((GSBizDetailsCell *)cell).content.text = contentText;
-           [((GSBizDetailsCell *)cell).content sizeToFit]; //added
-           [((GSBizDetailsCell *)cell).content layoutIfNeeded]; //added
-           break;
+            cell = [tableView dequeueReusableCellWithIdentifier:@"classCell" forIndexPath:indexPath];
+            break;
         }
         case 2:{
-           cell = [[UITableViewCell alloc]
-                  initWithStyle:UITableViewCellStyleDefault
-                  reuseIdentifier:@"imageScrollCell"];
-           UILabel *label = [[UILabel alloc] init];
-           label.adjustsFontSizeToFitWidth = YES;
-           label.text = @"Pictures";
-           label.frame = CGRectMake(0,0,40, 12);
-           [cell addSubview:label];
-           UIScrollView *scrollView = [[UIScrollView alloc] init];
+            cell = [tableView dequeueReusableCellWithIdentifier:@"classCell" forIndexPath:indexPath];
+            break;
+        }
+        case 3:{
+            cell = [[UITableViewCell alloc]
+                    initWithStyle:UITableViewCellStyleDefault
+                    reuseIdentifier:@"imageScrollCell"];
+            //           UILabel *label = [[UILabel alloc] init];
+            //           label.adjustsFontSizeToFitWidth = YES;
+            //           label.text = @"Pictures";
+            //           label.frame = CGRectMake(0,0,40, 12);
+            //           [cell addSubview:label];
+            UIScrollView *scrollView = [[UIScrollView alloc] init];
             
-            scrollView.frame = CGRectMake(0,15,310,120);
-           int scrollVWidth = 0;
-           for (int i = 0; i < 4; i++) {
-              UIImageView *imgView = [[UIImageView alloc]init];
-              imgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"soccer%d.jpg",i+1]];
-              imgView.contentMode = UIViewContentModeScaleAspectFit;
-              CGRect frame;
-              frame.origin.x = scrollVWidth;
-              frame.origin.y = 0;
-              frame.size = imgView.image.size;
-              imgView.frame = frame;
-              scrollVWidth += imgView.frame.size.width;
-              [scrollView addSubview:imgView];
+            scrollView.frame = CGRectMake(0,0,310,120);
+            int scrollVWidth = 0;
+            for (int i = 0; i < 4; i++) {
+                UIImageView *imgView = [[UIImageView alloc]init];
+                imgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"soccer%d.jpg",i+1]];
+                imgView.contentMode = UIViewContentModeScaleAspectFit;
+                CGRect frame;
+                frame.origin.x = scrollVWidth;
+                frame.origin.y = 0;
+                frame.size = imgView.image.size;
+                imgView.frame = frame;
+                scrollVWidth += imgView.frame.size.width;
+                [scrollView addSubview:imgView];
             }
             
             scrollView.contentSize = CGSizeMake(scrollVWidth,
-                                            scrollView.frame.size.height);
-           [cell addSubview:scrollView];
+                                                scrollView.frame.size.height);
+            [cell addSubview:scrollView];
             break;
         }
+
         default:
            cell = [tableView dequeueReusableCellWithIdentifier:@"detailsCell" forIndexPath:indexPath];
       }
@@ -147,7 +158,9 @@
         case 0:
            return 120;
         case 1:
-           return 50;
+            return 60;
+        case 3:
+           return 130;
         default:
             return 60;
     }
@@ -163,6 +176,19 @@
         bizHeaderView.reviewNum.text = [NSString stringWithFormat:@"%@ reviews",self.object[@"reviewNum"]];
         bizHeaderView.moreInfo.text = self.object[@"website"];
         bizHeaderView.moreInfo.dataDetectorTypes = UIDataDetectorTypeAll;
+        switch([self.object[@"ratings"] intValue]){
+            case 4:
+              bizHeaderView.star4.image = [UIImage imageNamed:@"green-star.jpg"];
+              break;
+            case 5:{
+                bizHeaderView.star4.image = [UIImage imageNamed:@"green-star.jpg"];
+                bizHeaderView.star5.image = [UIImage imageNamed:@"green-star.jpg"];
+                break;
+            }
+            default:
+                nil;
+            
+        }
     }
     bizHeaderView.frame = CGRectMake(0,0,320,110);
     

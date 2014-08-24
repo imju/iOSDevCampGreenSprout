@@ -33,6 +33,10 @@
 		454B65AF19AA5B3A00C5C07C /* soccer3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 454B65AB19AA5B3A00C5C07C /* soccer3.jpg */; };
 		454B65B019AA5B3A00C5C07C /* soccer2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 454B65AC19AA5B3A00C5C07C /* soccer2.jpg */; };
 		454B65B119AA5B3A00C5C07C /* soccer1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 454B65AD19AA5B3A00C5C07C /* soccer1.jpg */; };
+		454B65B419AA69B900C5C07C /* green-star.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 454B65B219AA69B900C5C07C /* green-star.jpg */; };
+		454B65B519AA69B900C5C07C /* star-empty.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 454B65B319AA69B900C5C07C /* star-empty.jpg */; };
+		454B65B719AA708C00C5C07C /* GSBizClasses.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454B65B619AA708C00C5C07C /* GSBizClasses.xib */; };
+		454B65BC19AA726900C5C07C /* calendar-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 454B65BB19AA726900C5C07C /* calendar-icon.png */; };
 		4998650515BF305000803E05 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4998650415BF305000803E05 /* StoreKit.framework */; };
 		743D7B6D157DA60100084B67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 743D7B6C157DA60100084B67 /* CoreGraphics.framework */; };
 		8112B17F19741BE700CA11B8 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8112B17E19741BE700CA11B8 /* ParseFacebookUtils.framework */; };
@@ -93,6 +97,10 @@
 		454B65AB19AA5B3A00C5C07C /* soccer3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = soccer3.jpg; sourceTree = "<group>"; };
 		454B65AC19AA5B3A00C5C07C /* soccer2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = soccer2.jpg; sourceTree = "<group>"; };
 		454B65AD19AA5B3A00C5C07C /* soccer1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = soccer1.jpg; sourceTree = "<group>"; };
+		454B65B219AA69B900C5C07C /* green-star.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "green-star.jpg"; path = "../green-star.jpg"; sourceTree = "<group>"; };
+		454B65B319AA69B900C5C07C /* star-empty.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "star-empty.jpg"; path = "../star-empty.jpg"; sourceTree = "<group>"; };
+		454B65B619AA708C00C5C07C /* GSBizClasses.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSBizClasses.xib; sourceTree = "<group>"; };
+		454B65BB19AA726900C5C07C /* calendar-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar-icon.png"; sourceTree = "<group>"; };
 		4998650415BF305000803E05 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		6332375315E438E900AE2736 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		6372FF521613CC3C002132AF /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -237,6 +245,7 @@
 				BD67442319AA70850038CEA8 /* GSFeedTableViewController.h */,
 				BD67442419AA70850038CEA8 /* GSFeedTableViewController.m */,
 				BD67442519AA70850038CEA8 /* GSFeedTableViewController.xib */,
+				454B65B619AA708C00C5C07C /* GSBizClasses.xib */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";
@@ -244,6 +253,9 @@
 		09ABC07813A1D52D009C3FCF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				454B65BB19AA726900C5C07C /* calendar-icon.png */,
+				454B65B219AA69B900C5C07C /* green-star.jpg */,
+				454B65B319AA69B900C5C07C /* star-empty.jpg */,
 				BDED089A19A9EBD0005ACCF6 /* home-line@2x.png */,
 				BDED089B19A9EBD0005ACCF6 /* profile-line@2x.png */,
 				BDED089819A9E0C6005ACCF6 /* bell-line@2x.png */,
@@ -317,7 +329,9 @@
 				454B659719A9789500C5C07C /* 4star_445x103.png in Resources */,
 				454B65AE19AA5B3A00C5C07C /* soccer4.jpg in Resources */,
 				09ABC07C13A1D52D009C3FCF /* InfoPlist.strings in Resources */,
+				454B65B419AA69B900C5C07C /* green-star.jpg in Resources */,
 				BDED088E19A99766005ACCF6 /* GSHomeViewController.xib in Resources */,
+				454B65BC19AA726900C5C07C /* calendar-icon.png in Resources */,
 				BDED087F19A9661C005ACCF6 /* GSBizTableViewController.xib in Resources */,
 				09ABC08513A1D52E009C3FCF /* MainWindow.xib in Resources */,
 				BDED089D19A9EBD0005ACCF6 /* profile-line@2x.png in Resources */,
@@ -327,6 +341,7 @@
 				454B659519A966A200C5C07C /* GSBizDetailsHeaderView.xib in Resources */,
 				C4C51B571613CE0800959FDC /* Default.png in Resources */,
 				BDED088419A966EB005ACCF6 /* GSBizTableViewCell.xib in Resources */,
+				454B65B719AA708C00C5C07C /* GSBizClasses.xib in Resources */,
 				C4C51B581613CE0800959FDC /* Default-568h@2x.png in Resources */,
 				BDED089C19A9EBD0005ACCF6 /* home-line@2x.png in Resources */,
 				454B65AF19AA5B3A00C5C07C /* soccer3.jpg in Resources */,
@@ -334,6 +349,7 @@
 				454B65A119A97D1900C5C07C /* GSBizDetailsCell.xib in Resources */,
 				454B65B119AA5B3A00C5C07C /* soccer1.jpg in Resources */,
 				C4C51B591613CE0800959FDC /* Default@2x.png in Resources */,
+				454B65B519AA69B900C5C07C /* star-empty.jpg in Resources */,
 				BDED089919A9E0C6005ACCF6 /* bell-line@2x.png in Resources */,
 				BD67442719AA70850038CEA8 /* GSFeedTableViewController.xib in Resources */,
 			);
