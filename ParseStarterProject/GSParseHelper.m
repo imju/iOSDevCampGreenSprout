@@ -79,14 +79,14 @@
     }];
 }
 
-+ (void)queryBizWithObjectId:(NSString *)objectId andBlock:(void(^)(PFObject *object, UIImage *mainImage, NSArray *classes, NSError *error))block{
++ (void)queryBizWithObjectId:(NSString *)objectId andBlock:(void(^)(PFObject *object, UIImage *mainImage, NSArray *classes, NSArray *pictures, NSError *error))block{
     
     void(^retrieveClasses)(PFObject *object, UIImage *mainImage) = ^(PFObject *object, UIImage *mainImage) {
         PFQuery *query = [PFQuery queryWithClassName:@"classes"];
         query.cachePolicy = kPFCachePolicyCacheElseNetwork;
         [query whereKey:@"bizPointer" equalTo:object];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            block(object, mainImage, objects, error);
+            block(object, mainImage, objects, nil, error);
         }];
     };
     
@@ -94,7 +94,7 @@
     query.cachePolicy = kPFCachePolicyCacheElseNetwork;
     [query getObjectInBackgroundWithId:objectId block:^(PFObject *object, NSError *error) {
         if(!object || error){
-            block(object, nil, nil, error);
+            block(object, nil, nil, nil, error);
         }else{
             if(object[@"picture"]){
                 __block UIImage *image = nil;
@@ -103,7 +103,7 @@
                         image = [UIImage imageWithData:data];
                     }
                     if(error){
-                        block(object, image, nil, error);
+                        block(object, image, nil, nil, error);
                     }else{
                         retrieveClasses(object, image);
                     }

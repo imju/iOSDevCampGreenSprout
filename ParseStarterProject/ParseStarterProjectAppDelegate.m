@@ -69,10 +69,10 @@
                                                      UIRemoteNotificationTypeAlert |
                                                      UIRemoteNotificationTypeSound)];
     
-    GSBizDetailsTableViewController *vc = [[GSBizDetailsTableViewController alloc] initWithNibName:@"GSBizDetailsTableViewController" bundle:nil];
-    UINavigationController *navController=[[UINavigationController alloc]initWithRootViewController:vc];
-
-    self.window.rootViewController = navController;
+//    GSBizDetailsTableViewController *vc = [[GSBizDetailsTableViewController alloc] initWithNibName:@"GSBizDetailsTableViewController" bundle:nil];
+//    UINavigationController *navController=[[UINavigationController alloc]initWithRootViewController:vc];
+//
+//    self.window.rootViewController = navController;
     
     return YES;
 }

@@ -12,4 +12,6 @@
 
 @interface GSBizDetailsTableViewController : UITableViewController
 
+- (instancetype)initWithBizObjectId:(NSString *)objectId;
+
 @end

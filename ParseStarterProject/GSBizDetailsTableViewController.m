@@ -10,6 +10,8 @@
 #import "GSParseHelper.h"
 
 @interface GSBizDetailsTableViewController ()
+
+@property (strong, nonatomic) NSString *objectId;
 @property (strong, nonatomic) PFObject *object;
 @property (strong, nonatomic) UIImage *mainImage;
 @property (strong, nonatomic) NSArray *classes;
@@ -18,6 +20,14 @@
 @end
 
 @implementation GSBizDetailsTableViewController
+
+- (instancetype)initWithBizObjectId:(NSString *)objectId{
+    self = [super init];
+    if(self){
+        self.objectId = objectId;
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -33,13 +43,15 @@
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    [GSParseHelper queryBizWithObjectId:@"2LzD8bIVjs" andBlock:^(PFObject *object, UIImage *mainImage, NSArray *classes, NSArray *pictures, NSError *error) {
+    [GSParseHelper queryBizWithObjectId:self.objectId andBlock:^(PFObject *object, UIImage *mainImage, NSArray *classes, NSArray *pictures, NSError *error) {
         if(!error && object!=nil){
             self.object = object;
             self.mainImage = mainImage;
             self.classes = classes;
             self.pictures = pictures;
             [self.tableView reloadData];
+        }else{
+            NSLog(@"Error: %@", error);
         }
     }];
 
