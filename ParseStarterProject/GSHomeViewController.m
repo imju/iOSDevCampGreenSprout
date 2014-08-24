@@ -44,7 +44,7 @@
     self.tableView.rowHeight = 140;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    [GSParseHelper queryBizWithCity:self.city category:nil andBlock:^(NSArray *objects, NSDictionary *images, NSError *error) {
+    [GSParseHelper queryBizWithCity:self.city category:nil searchString:nil andBlock:^(NSArray *objects, NSDictionary *images, NSError *error) {
         if(!error && [objects count] > 0){
             self.objects = objects;
             self.imageDictionary = images;
@@ -159,15 +159,23 @@
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
-//    searchBar endEditing:<#(BOOL)#>
+    searchBar.text = nil;
+    [searchBar endEditing:YES];
 }
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
+    [searchBar setShowsCancelButton:YES animated:YES];
     return YES;
 }
 
 - (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar{
+    [searchBar setShowsCancelButton:NO animated:YES];
     return YES;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    GSBizTableViewController *controller = [[GSBizTableViewController alloc] initWithCity:self.city andSearchString:searchBar.text];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 /*
