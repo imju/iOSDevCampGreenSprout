@@ -37,10 +37,6 @@
                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="4star_445x103.png" translatesAutoresizingMaskIntoConstraints="NO" id="QD3-fa-HaS">
-                    <rect key="frame" x="14" y="54" width="89" height="18"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ad-3l-kIH">
                     <rect key="frame" x="242" y="20" width="57" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -61,7 +57,7 @@
                     </state>
                 </button>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="http://ymcasv.org" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RaS-aA-KJh">
-                    <rect key="frame" x="14" y="75" width="285" height="26"/>
+                    <rect key="frame" x="14" y="75" width="285" height="24"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <accessibility key="accessibilityConfiguration">
@@ -71,6 +67,26 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <dataDetectorType key="dataDetectorTypes" link="YES"/>
                 </textView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="green-star.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="INs-Ll-amf">
+                    <rect key="frame" x="60" y="52" width="21" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="green-star.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="VaO-9v-wzw">
+                    <rect key="frame" x="14" y="52" width="21" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="green-star.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="EYF-3A-pNw">
+                    <rect key="frame" x="37" y="52" width="21" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star-empty.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="d3D-Hz-9G5">
+                    <rect key="frame" x="81" y="52" width="21" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star-empty.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="LAG-2a-zIV">
+                    <rect key="frame" x="104" y="52" width="21" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -82,10 +98,16 @@
                 <outlet property="moreInfo" destination="RaS-aA-KJh" id="t9g-rB-hNK"/>
                 <outlet property="reviewBtn" destination="BU2-ji-n17" id="JPS-tH-wvZ"/>
                 <outlet property="reviewNum" destination="Eag-I1-hey" id="ioX-Hm-K50"/>
+                <outlet property="star1" destination="INs-Ll-amf" id="cFo-sd-a7Q"/>
+                <outlet property="star2" destination="VaO-9v-wzw" id="yBT-83-Gh8"/>
+                <outlet property="star3" destination="EYF-3A-pNw" id="14L-bK-cWI"/>
+                <outlet property="star4" destination="d3D-Hz-9G5" id="Yj1-RH-R41"/>
+                <outlet property="star5" destination="LAG-2a-zIV" id="6em-ev-qAC"/>
             </connections>
         </view>
     </objects>
     <resources>
-        <image name="4star_445x103.png" width="445" height="103"/>
+        <image name="green-star.jpg" width="512" height="512"/>
+        <image name="star-empty.jpg" width="512" height="512"/>
     </resources>
 </document>

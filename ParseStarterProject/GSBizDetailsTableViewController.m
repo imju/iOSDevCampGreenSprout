@@ -151,6 +151,19 @@
         bizHeaderView.reviewNum.text = [NSString stringWithFormat:@"%@ reviews",self.object[@"reviewNum"]];
         bizHeaderView.moreInfo.text = self.object[@"website"];
         bizHeaderView.moreInfo.dataDetectorTypes = UIDataDetectorTypeAll;
+        switch([self.object[@"ratings"] intValue]){
+            case 4:
+              bizHeaderView.star4.image = [UIImage imageNamed:@"green-star.jpg"];
+              break;
+            case 5:{
+                bizHeaderView.star4.image = [UIImage imageNamed:@"green-star.jpg"];
+                bizHeaderView.star5.image = [UIImage imageNamed:@"green-star.jpg"];
+                break;
+            }
+            default:
+                nil;
+            
+        }
     }
     bizHeaderView.frame = CGRectMake(0,0,320,110);
     
