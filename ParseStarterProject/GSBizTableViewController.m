@@ -15,6 +15,7 @@
 
 @property (strong, nonatomic) NSString *city;
 @property (strong, nonatomic) NSString *category;
+@property (strong, nonatomic) NSString *searchString;
 
 @property (strong, nonatomic) NSArray *objects;
 @property (strong, nonatomic) NSDictionary *imageDictionary;
@@ -32,14 +33,31 @@
     return self;
 }
 
+- (instancetype)initWithCity:(NSString *)city andSearchString:(NSString *)searchString{
+    self = [super init];
+    if(self){
+        self.city = city;
+        self.searchString = searchString;
+    }
+    return self;
+}
+
 - (void)viewDidLoad{
     [super viewDidLoad];
+    
+    if(self.category){
+        self.title = self.category;
+    }else if(self.searchString){
+        self.title = self.searchString;
+    }else{
+        self.title = self.city;
+    }
     
     [self.tableView registerNib:[UINib nibWithNibName:@"GSBizTableViewCell" bundle:nil] forCellReuseIdentifier:@"GSBizTableViewCellIdentifier"];
     self.tableView.rowHeight = 140;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    [GSParseHelper queryBizWithCity:self.city category:self.category andBlock:^(NSArray *objects, NSDictionary *images, NSError *error) {
+    [GSParseHelper queryBizWithCity:self.city category:self.category searchString:self.searchString andBlock:^(NSArray *objects, NSDictionary *images, NSError *error) {
         if(!error && [objects count] > 0){
             self.objects = objects;
             self.imageDictionary = images;

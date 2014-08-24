@@ -11,14 +11,38 @@
 
 @implementation GSParseHelper
 
-+ (void)queryBizWithCity:(NSString *)city category:(NSString *)category andBlock:(void(^)(NSArray *objects, NSDictionary *images, NSError *error))block{
++ (void)queryBizWithCity:(NSString *)city category:(NSString *)category searchString:(NSString *)searchString andBlock:(void(^)(NSArray *objects, NSDictionary *images, NSError *error))block{
+    NSAssert(!(!!category && !!searchString), @"Can query only category OR searchString");
+    
     PFQuery* query = [PFQuery queryWithClassName:@"biz"];
     
-    if(city){
-        [query whereKey:@"city" equalTo:city];
-    }
     if(category){
+        if(city){
+            [query whereKey:@"city" equalTo:city];
+        }
         [query whereKey:@"category" equalTo:category];
+    }else if(searchString){
+        PFQuery* catQuery = [PFQuery queryWithClassName:@"biz"];
+        if(city){
+            [catQuery whereKey:@"city" equalTo:city];
+        }
+        [catQuery whereKey:@"category" matchesRegex:searchString modifiers:@"i"];
+        
+        PFQuery* descQuery = [PFQuery queryWithClassName:@"biz"];
+        if(city){
+            [descQuery whereKey:@"city" equalTo:city];
+        }
+        [descQuery whereKey:@"description" matchesRegex:searchString modifiers:@"i"];
+        
+        PFQuery* nameQuery = [PFQuery queryWithClassName:@"biz"];
+        if(city){
+            [nameQuery whereKey:@"city" equalTo:city];
+        }
+        [nameQuery whereKey:@"name" matchesRegex:searchString modifiers:@"i"];
+        
+        query = [PFQuery orQueryWithSubqueries:@[catQuery, descQuery, nameQuery]];
+    }else if(city){
+        [query whereKey:@"city" equalTo:city];
     }
     
     __block NSArray *objects = nil;
@@ -32,6 +56,7 @@
         }
     };
     
+    query.cachePolicy = kPFCachePolicyCacheElseNetwork;
     [query findObjectsInBackgroundWithBlock:^(NSArray *objs, NSError *error) {
         if([objs count] > 0){
             objects = objs;
@@ -89,6 +114,7 @@
 //    };
 
     PFQuery *query = [PFQuery queryWithClassName:@"biz"];
+    query.cachePolicy = kPFCachePolicyCacheElseNetwork;
     [query getObjectInBackgroundWithId:objectId block:^(PFObject *object, NSError *error) {
         if(!object || error){
             block(object, nil, nil, nil, error);

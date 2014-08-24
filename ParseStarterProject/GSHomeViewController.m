@@ -44,7 +44,7 @@
     self.tableView.rowHeight = 140;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    [GSParseHelper queryBizWithCity:self.city category:nil andBlock:^(NSArray *objects, NSDictionary *images, NSError *error) {
+    [GSParseHelper queryBizWithCity:self.city category:nil searchString:nil andBlock:^(NSArray *objects, NSDictionary *images, NSError *error) {
         if(!error && [objects count] > 0){
             self.objects = objects;
             self.imageDictionary = images;
@@ -124,6 +124,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:cell.bounds];
         searchBar.delegate = self;
+        searchBar.barTintColor = [UIColor colorWithRed:0.44 green:0.66 blue:0.28 alpha:1];
         [cell.contentView addSubview:searchBar];
         _searchCell = cell;
     }
@@ -159,15 +160,23 @@
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
-//    searchBar endEditing:<#(BOOL)#>
+    searchBar.text = nil;
+    [searchBar endEditing:YES];
 }
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
+    [searchBar setShowsCancelButton:YES animated:YES];
     return YES;
 }
 
 - (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar{
+    [searchBar setShowsCancelButton:NO animated:YES];
     return YES;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    GSBizTableViewController *controller = [[GSBizTableViewController alloc] initWithCity:self.city andSearchString:searchBar.text];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 /*

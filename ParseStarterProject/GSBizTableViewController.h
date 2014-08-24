@@ -11,5 +11,6 @@
 @interface GSBizTableViewController : UITableViewController
 
 - (instancetype)initWithCity:(NSString *)city andCategory:(NSString *)category;
+- (instancetype)initWithCity:(NSString *)city andSearchString:(NSString *)searchString;
 
 @end

@@ -20,15 +20,16 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.frame = CGRectMake(0, 0, 320, 44*5+20);
+        self.frame = CGRectMake(0, 0, 320, 44*5+16);
         self.selectionStyle = UITableViewCellSelectionStyleNone;
 
         self.categories = @[@"Sports", @"Music", @"Arts", @"Academics", @"More..."];
         
-        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(10, 10, 300, 44*5) style:UITableViewStylePlain];
+        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(8, 8, 304, 44*5) style:UITableViewStylePlain];
         tableView.delegate = self;
         tableView.dataSource = self;
         tableView.scrollEnabled = NO;
+        tableView.layer.cornerRadius = 6;
         
         [self addSubview:tableView];
         // Initialization code
