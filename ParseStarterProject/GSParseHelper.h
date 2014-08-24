@@ -13,6 +13,6 @@
 
 + (void)queryBizWithCity:(NSString *)city category:(NSString *)category andBlock:(void(^)(NSArray *objects, NSDictionary *images, NSError *error))block;
 
-+ (void)queryBizWithObjectId:(NSString *)objectId andBlock:(void(^)(PFObject *object, UIImage *mainImage, NSArray *classes, NSError *error))block;
++ (void)queryBizWithObjectId:(NSString *)objectId andBlock:(void(^)(PFObject *object, UIImage *mainImage, NSArray *classes, NSArray *pictures, NSError *error))block;
 
 @end

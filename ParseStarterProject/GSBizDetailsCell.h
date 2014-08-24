@@ -10,6 +10,6 @@
 
 @interface GSBizDetailsCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *label;
-@property (weak, nonatomic) IBOutlet UITextField *content;
+@property (weak, nonatomic) IBOutlet UITextView *content;
 
 @end
