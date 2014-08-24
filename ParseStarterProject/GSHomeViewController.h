@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GSHomeViewController : UIViewController
+@interface GSHomeViewController : UITableViewController
+
+- (instancetype)initWithCity:(NSString *)city;
 
 @end

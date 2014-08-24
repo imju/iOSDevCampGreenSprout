@@ -9,6 +9,7 @@
 #import "GSMainNavigationController.h"
 #import "GSCitiesTableViewController.h"
 #import "GSHomeViewController.h"
+#import "GSBizTableViewController.h"
 
 @interface GSMainNavigationController () <GSCitiesTableViewControllerDelegate, UINavigationControllerDelegate>
 
@@ -34,7 +35,7 @@
     GSCitiesTableViewController *cities = [[GSCitiesTableViewController alloc] init];
     cities.title = self.selectedCity;  // HACK: to make the back button the city name
     cities.delegate = self;
-    GSHomeViewController *home = [[GSHomeViewController alloc] init];
+    GSHomeViewController *home = [[GSHomeViewController alloc] initWithCity:self.selectedCity];
     [self pushViewController:cities animated:NO];
     [self pushViewController:home animated:NO];
 }
@@ -45,7 +46,7 @@
 
 - (void)citiesTableViewController:(GSCitiesTableViewController *)controller didSelectCity:(NSString *)city{
     self.selectedCity = city;
-    GSHomeViewController *home = [[GSHomeViewController alloc] init];
+    GSHomeViewController *home = [[GSHomeViewController alloc] initWithCity:city];
     controller.title = city;  // HACK: to make the back button the city name
     [self pushViewController:home animated:YES];
 }

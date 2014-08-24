@@ -1,34 +1,52 @@
 //
-//  GSCitiesTableViewController.m
+//  GSBizTableViewController.m
 //  GreenSprout
 //
 //  Created by Dominic Tham on 8/23/14.
 //
 //
 
-#import "GSCitiesTableViewController.h"
+#import <Parse/Parse.h>
+#import "GSBizTableViewController.h"
+#import "GSBizTableViewCell.h"
+#import "GSParseHelper.h"
 
-@interface GSCitiesTableViewController ()
+@interface GSBizTableViewController ()
 
-@property (strong, nonatomic) NSArray *cityNames;
-@property (strong, nonatomic) NSArray *otherCityNames;
-@property (strong, nonatomic) NSString *selectedCity;
+@property (strong, nonatomic) NSString *city;
+@property (strong, nonatomic) NSString *category;
+
+@property (strong, nonatomic) NSArray *objects;
+@property (strong, nonatomic) NSDictionary *imageDictionary;
 
 @end
 
-@implementation GSCitiesTableViewController
+@implementation GSBizTableViewController
+
+- (instancetype)initWithCity:(NSString *)city andCategory:(NSString *)category{
+    self = [super init];
+    if(self){
+        self.city = city;
+        self.category = category;
+    }
+    return self;
+}
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    self.title = NSLocalizedString(@"Cities", @"Cities title");
     
-    self.cityNames = @[@"Cupertino", @"Mountain View", @"Palo Alto", @"San Francisco", @"San Jose", @"Sunnyvale"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"GSBizTableViewCell" bundle:nil] forCellReuseIdentifier:@"GSBizTableViewCellIdentifier"];
+    self.tableView.rowHeight = 140;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-//    self.selectedCity = [self.delegate citiesTableViewControllerGetCurrentCity:self];
-//    self.otherCityNames = [self.cityNames objectsAtIndexes:[self.cityNames indexesOfObjectsPassingTest:^BOOL(NSString *city, NSUInteger idx, BOOL *stop) {
-//        return ![city isEqualToString:self.selectedCity];
-//    }]];
-
+    [GSParseHelper queryBizWithCity:self.city category:self.category andBlock:^(NSArray *objects, NSDictionary *images, NSError *error) {
+        if(!error && [objects count] > 0){
+            self.objects = objects;
+            self.imageDictionary = images;
+            [self.tableView reloadData];
+        }
+    }];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -36,70 +54,30 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)updateSelectedCity:(NSString *)city{
-    self.selectedCity = city;
-    self.otherCityNames = [self.cityNames objectsAtIndexes:[self.cityNames indexesOfObjectsPassingTest:^BOOL(NSString *city, NSUInteger idx, BOOL *stop) {
-        return ![city isEqualToString:self.selectedCity];
-    }]];
-    [self.tableView reloadData];
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    if(self.selectedCity){
-        return 2;
-    }else{
-        return 1;
-    }
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if(self.selectedCity && section == 0){
-        return 1;
-    }else{
-        return [self.otherCityNames count];
-    }
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    if(self.selectedCity){
-        switch (section) {
-            case 0:
-                return @"Current";
-            case 1:
-                return @"Other";
-            default:
-                return nil;
-        }
-    }else{
-        return nil;
-    }
+    return [self.objects count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GSCitiesTableViewCell"];
-    if(!cell){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"GSCitiesTableViewCell"];
-    }
+    GSBizTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GSBizTableViewCellIdentifier" forIndexPath:indexPath];
     
-    if(self.selectedCity && indexPath.section == 0){
-        cell.textLabel.text = self.selectedCity;
-    }else{
-        cell.textLabel.text = self.otherCityNames[indexPath.row];
-    }
+    PFObject *object = self.objects[indexPath.row];
+    cell.titleLabel.text = object[@"name"];
+    cell.mainImageView.image = self.imageDictionary[object.objectId];
     
     return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString *selectedCity = nil;
-    if(self.selectedCity && indexPath.section == 0){
-        selectedCity =  self.selectedCity;
-    }else{
-        selectedCity = self.otherCityNames[indexPath.row];
-    }
-    [self.delegate citiesTableViewController:self didSelectCity:selectedCity];
 }
 
 /*
