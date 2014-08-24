@@ -6,6 +6,7 @@
 //
 
 #import <Parse/Parse.h>
+#import "GSBizDetailsTableViewController.h"
 
 // If you are using Facebook, uncomment this line
 // #import <ParseFacebookUtils/PFFacebookUtils.h>
@@ -49,6 +50,12 @@
     [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
                                                      UIRemoteNotificationTypeAlert |
                                                      UIRemoteNotificationTypeSound)];
+    
+    GSBizDetailsTableViewController *vc = [[GSBizDetailsTableViewController alloc] initWithNibName:@"GSBizDetailsTableViewController" bundle:nil];
+    UINavigationController *navController=[[UINavigationController alloc]initWithRootViewController:vc];
+
+    self.window.rootViewController = navController;
+    
     return YES;
 }
 
