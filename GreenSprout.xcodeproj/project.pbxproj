@@ -28,9 +28,15 @@
 		817AD67C196B009E0014C796 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817AD67B196B009E0014C796 /* Bolts.framework */; };
 		BDED087119A9410C005ACCF6 /* GSCitiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDED086F19A9410C005ACCF6 /* GSCitiesTableViewController.m */; };
 		BDED087219A9410C005ACCF6 /* GSCitiesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDED087019A9410C005ACCF6 /* GSCitiesTableViewController.xib */; };
-		BDED087619A94125005ACCF6 /* GSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDED087419A94125005ACCF6 /* GSHomeViewController.m */; };
-		BDED087719A94125005ACCF6 /* GSHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDED087519A94125005ACCF6 /* GSHomeViewController.xib */; };
 		BDED087A19A9513F005ACCF6 /* GSMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDED087919A9513F005ACCF6 /* GSMainNavigationController.m */; };
+		BDED087E19A9661C005ACCF6 /* GSBizTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDED087C19A9661C005ACCF6 /* GSBizTableViewController.m */; };
+		BDED087F19A9661C005ACCF6 /* GSBizTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDED087D19A9661C005ACCF6 /* GSBizTableViewController.xib */; };
+		BDED088319A966EB005ACCF6 /* GSBizTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDED088119A966EB005ACCF6 /* GSBizTableViewCell.m */; };
+		BDED088419A966EB005ACCF6 /* GSBizTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDED088219A966EB005ACCF6 /* GSBizTableViewCell.xib */; };
+		BDED088D19A99766005ACCF6 /* GSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDED088B19A99766005ACCF6 /* GSHomeViewController.m */; };
+		BDED088E19A99766005ACCF6 /* GSHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDED088C19A99766005ACCF6 /* GSHomeViewController.xib */; };
+		BDED089119A99B6A005ACCF6 /* GSHomeViewCategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDED089019A99B6A005ACCF6 /* GSHomeViewCategoryTableViewCell.m */; };
+		BDED089719A9A550005ACCF6 /* GSParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BDED089619A9A550005ACCF6 /* GSParseHelper.m */; };
 		C4C51B571613CE0800959FDC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B541613CE0800959FDC /* Default.png */; };
 		C4C51B581613CE0800959FDC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B551613CE0800959FDC /* Default-568h@2x.png */; };
 		C4C51B591613CE0800959FDC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B561613CE0800959FDC /* Default@2x.png */; };
@@ -69,11 +75,21 @@
 		BDED086E19A9410C005ACCF6 /* GSCitiesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSCitiesTableViewController.h; sourceTree = "<group>"; };
 		BDED086F19A9410C005ACCF6 /* GSCitiesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSCitiesTableViewController.m; sourceTree = "<group>"; };
 		BDED087019A9410C005ACCF6 /* GSCitiesTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSCitiesTableViewController.xib; sourceTree = "<group>"; };
-		BDED087319A94125005ACCF6 /* GSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSHomeViewController.h; sourceTree = "<group>"; };
-		BDED087419A94125005ACCF6 /* GSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSHomeViewController.m; sourceTree = "<group>"; };
-		BDED087519A94125005ACCF6 /* GSHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSHomeViewController.xib; sourceTree = "<group>"; };
 		BDED087819A9513F005ACCF6 /* GSMainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSMainNavigationController.h; sourceTree = "<group>"; };
 		BDED087919A9513F005ACCF6 /* GSMainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSMainNavigationController.m; sourceTree = "<group>"; };
+		BDED087B19A9661C005ACCF6 /* GSBizTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSBizTableViewController.h; sourceTree = "<group>"; };
+		BDED087C19A9661C005ACCF6 /* GSBizTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSBizTableViewController.m; sourceTree = "<group>"; };
+		BDED087D19A9661C005ACCF6 /* GSBizTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSBizTableViewController.xib; sourceTree = "<group>"; };
+		BDED088019A966EB005ACCF6 /* GSBizTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSBizTableViewCell.h; sourceTree = "<group>"; };
+		BDED088119A966EB005ACCF6 /* GSBizTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSBizTableViewCell.m; sourceTree = "<group>"; };
+		BDED088219A966EB005ACCF6 /* GSBizTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSBizTableViewCell.xib; sourceTree = "<group>"; };
+		BDED088A19A99766005ACCF6 /* GSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSHomeViewController.h; sourceTree = "<group>"; };
+		BDED088B19A99766005ACCF6 /* GSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSHomeViewController.m; sourceTree = "<group>"; };
+		BDED088C19A99766005ACCF6 /* GSHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSHomeViewController.xib; sourceTree = "<group>"; };
+		BDED088F19A99B6A005ACCF6 /* GSHomeViewCategoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSHomeViewCategoryTableViewCell.h; sourceTree = "<group>"; };
+		BDED089019A99B6A005ACCF6 /* GSHomeViewCategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSHomeViewCategoryTableViewCell.m; sourceTree = "<group>"; };
+		BDED089519A9A550005ACCF6 /* GSParseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSParseHelper.h; sourceTree = "<group>"; };
+		BDED089619A9A550005ACCF6 /* GSParseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSParseHelper.m; sourceTree = "<group>"; };
 		C4C51B541613CE0800959FDC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		C4C51B551613CE0800959FDC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C4C51B561613CE0800959FDC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -159,9 +175,19 @@
 				BDED086E19A9410C005ACCF6 /* GSCitiesTableViewController.h */,
 				BDED086F19A9410C005ACCF6 /* GSCitiesTableViewController.m */,
 				BDED087019A9410C005ACCF6 /* GSCitiesTableViewController.xib */,
-				BDED087319A94125005ACCF6 /* GSHomeViewController.h */,
-				BDED087419A94125005ACCF6 /* GSHomeViewController.m */,
-				BDED087519A94125005ACCF6 /* GSHomeViewController.xib */,
+				BDED088A19A99766005ACCF6 /* GSHomeViewController.h */,
+				BDED088B19A99766005ACCF6 /* GSHomeViewController.m */,
+				BDED088F19A99B6A005ACCF6 /* GSHomeViewCategoryTableViewCell.h */,
+				BDED089019A99B6A005ACCF6 /* GSHomeViewCategoryTableViewCell.m */,
+				BDED088C19A99766005ACCF6 /* GSHomeViewController.xib */,
+				BDED087B19A9661C005ACCF6 /* GSBizTableViewController.h */,
+				BDED087C19A9661C005ACCF6 /* GSBizTableViewController.m */,
+				BDED087D19A9661C005ACCF6 /* GSBizTableViewController.xib */,
+				BDED088019A966EB005ACCF6 /* GSBizTableViewCell.h */,
+				BDED088119A966EB005ACCF6 /* GSBizTableViewCell.m */,
+				BDED088219A966EB005ACCF6 /* GSBizTableViewCell.xib */,
+				BDED089519A9A550005ACCF6 /* GSParseHelper.h */,
+				BDED089619A9A550005ACCF6 /* GSParseHelper.m */,
 				09ABC07813A1D52D009C3FCF /* Supporting Files */,
 			);
 			path = ParseStarterProject;
@@ -233,11 +259,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				09ABC07C13A1D52D009C3FCF /* InfoPlist.strings in Resources */,
-				BDED087719A94125005ACCF6 /* GSHomeViewController.xib in Resources */,
+				BDED088E19A99766005ACCF6 /* GSHomeViewController.xib in Resources */,
+				BDED087F19A9661C005ACCF6 /* GSBizTableViewController.xib in Resources */,
 				09ABC08513A1D52E009C3FCF /* MainWindow.xib in Resources */,
 				BDED087219A9410C005ACCF6 /* GSCitiesTableViewController.xib in Resources */,
 				09144A7313C2997E00388B00 /* Entitlements.plist in Resources */,
 				C4C51B571613CE0800959FDC /* Default.png in Resources */,
+				BDED088419A966EB005ACCF6 /* GSBizTableViewCell.xib in Resources */,
 				C4C51B581613CE0800959FDC /* Default-568h@2x.png in Resources */,
 				C4C51B591613CE0800959FDC /* Default@2x.png in Resources */,
 			);
@@ -250,10 +278,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDED088319A966EB005ACCF6 /* GSBizTableViewCell.m in Sources */,
+				BDED089119A99B6A005ACCF6 /* GSHomeViewCategoryTableViewCell.m in Sources */,
 				BDED087A19A9513F005ACCF6 /* GSMainNavigationController.m in Sources */,
+				BDED087E19A9661C005ACCF6 /* GSBizTableViewController.m in Sources */,
+				BDED089719A9A550005ACCF6 /* GSParseHelper.m in Sources */,
+				BDED088D19A99766005ACCF6 /* GSHomeViewController.m in Sources */,
 				09ABC07F13A1D52D009C3FCF /* main.m in Sources */,
 				09ABC08213A1D52D009C3FCF /* ParseStarterProjectAppDelegate.m in Sources */,
-				BDED087619A94125005ACCF6 /* GSHomeViewController.m in Sources */,
 				BDED087119A9410C005ACCF6 /* GSCitiesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
