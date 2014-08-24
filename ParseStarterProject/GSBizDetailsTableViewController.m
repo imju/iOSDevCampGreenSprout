@@ -26,8 +26,6 @@
     UINib *detailsCell = [UINib nibWithNibName:@"GSBizDetailsCell" bundle:nil];
     [self.tableView registerNib:detailsCell forCellReuseIdentifier:@"detailsCell"];
     
-//    [self.tableView addSubview:bizDvc];
-
 
 }
 
@@ -65,7 +63,7 @@
     GSBizDetailsHeaderView *bizHeaderView = [[[NSBundle mainBundle] loadNibNamed:@"GSBizDetailsHeaderView" owner:self options:nil] objectAtIndex:0];
     bizHeaderView.frame = CGRectMake(0,0,320,105);
     
-     return bizHeaderView;
+    return bizHeaderView;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
