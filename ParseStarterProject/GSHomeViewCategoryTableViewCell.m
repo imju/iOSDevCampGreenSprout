@@ -21,7 +21,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.frame = CGRectMake(0, 0, 320, 44*5+20);
-        
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+
         self.categories = @[@"Sports", @"Music", @"Arts", @"Academics", @"More..."];
         
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(10, 10, 300, 44*5) style:UITableViewStylePlain];
@@ -71,7 +72,7 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.delegate homeViewCategoryTableViewCell:self didSelectCategory:self.categories[indexPath.row]];
 }
 

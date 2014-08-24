@@ -121,6 +121,7 @@
     if(_searchCell == nil){
         UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SearchCell"];
         cell.frame = CGRectMake(0, 0, 320, 44);
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:cell.bounds];
         [cell.contentView addSubview:searchBar];
         _searchCell = cell;
@@ -148,6 +149,7 @@
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
         cell.textLabel.text = NSLocalizedString(@"Upcoming Events", @"Upcoming events title");
         cell.backgroundColor = [UIColor colorWithWhite:0.25 alpha:.8];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         cell.textLabel.textColor = [UIColor whiteColor];
         _upcomingEventsTitleCell = cell;
