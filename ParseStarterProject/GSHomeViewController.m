@@ -13,7 +13,7 @@
 #import "GSParseHelper.h"
 #import "GSBizTableViewController.h"
 
-@interface GSHomeViewController () <GSHomeViewCategoryTableViewCellDelegate>
+@interface GSHomeViewController () <GSHomeViewCategoryTableViewCellDelegate, UISearchBarDelegate>
 
 @property (strong, nonatomic) NSString *city;
 @property (strong, nonatomic) UITableViewCell *searchCell;
@@ -123,6 +123,7 @@
         cell.frame = CGRectMake(0, 0, 320, 44);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:cell.bounds];
+        searchBar.delegate = self;
         [cell.contentView addSubview:searchBar];
         _searchCell = cell;
     }
@@ -155,6 +156,18 @@
         _upcomingEventsTitleCell = cell;
     }
     return _upcomingEventsTitleCell;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+//    searchBar endEditing:<#(BOOL)#>
+}
+
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
+    return YES;
+}
+
+- (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar{
+    return YES;
 }
 
 /*

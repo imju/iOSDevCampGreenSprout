@@ -54,4 +54,38 @@
     }];
 }
 
++ (void)queryBizWithObjectId:(NSString *)objectId andBlock:(void(^)(PFObject *object, UIImage *mainImage, NSArray *classes, NSError *error))block{
+    
+    void(^retrieveClasses)(PFObject *object, UIImage *mainImage) = ^(PFObject *object, UIImage *mainImage) {
+        PFQuery *query = [PFQuery queryWithClassName:@"classes"];
+        [query whereKey:@"bizPointer" equalTo:object];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            block(object, mainImage, objects, error);
+        }];
+    };
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"biz"];
+    [query getObjectInBackgroundWithId:objectId block:^(PFObject *object, NSError *error) {
+        if(!object || error){
+            block(object, nil, nil, error);
+        }else{
+            if(object[@"picture"]){
+                __block UIImage *image = nil;
+                [(PFFile *)object[@"picture"] getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                    if(data){
+                        image = [UIImage imageWithData:data];
+                    }
+                    if(error){
+                        block(object, image, nil, error);
+                    }else{
+                        retrieveClasses(object, image);
+                    }
+                }];
+            }else{
+                retrieveClasses(object, nil);
+            }
+        }
+    }];
+}
+
 @end
