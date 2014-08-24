@@ -236,6 +236,9 @@
 		09ABC07813A1D52D009C3FCF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BDED089A19A9EBD0005ACCF6 /* home-line@2x.png */,
+				BDED089B19A9EBD0005ACCF6 /* profile-line@2x.png */,
+				BDED089819A9E0C6005ACCF6 /* bell-line@2x.png */,
 				454B65AA19AA5B3A00C5C07C /* soccer4.jpg */,
 				454B65AB19AA5B3A00C5C07C /* soccer3.jpg */,
 				454B65AC19AA5B3A00C5C07C /* soccer2.jpg */,
@@ -317,6 +320,7 @@
 				C4C51B571613CE0800959FDC /* Default.png in Resources */,
 				BDED088419A966EB005ACCF6 /* GSBizTableViewCell.xib in Resources */,
 				C4C51B581613CE0800959FDC /* Default-568h@2x.png in Resources */,
+				BDED089C19A9EBD0005ACCF6 /* home-line@2x.png in Resources */,
 				454B65AF19AA5B3A00C5C07C /* soccer3.jpg in Resources */,
 				454B659C19A97C3700C5C07C /* GSBizDetailsTableViewController.xib in Resources */,
 				454B65A119A97D1900C5C07C /* GSBizDetailsCell.xib in Resources */,

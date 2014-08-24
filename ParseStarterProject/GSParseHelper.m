@@ -79,62 +79,37 @@
     }];
 }
 
-+ (void)queryBizWithObjectId:(NSString *)objectId andBlock:(void(^)(PFObject *object, UIImage *mainImage, NSArray *classes, NSArray *pictures, NSError *error))block{
-    __block NSArray *classes = nil;
-    void(^retrieveClassesPictures)(PFObject *object, UIImage *mainImage) = ^(PFObject *object, UIImage *mainImage) {
-        __block PFQuery *query = [PFQuery queryWithClassName:@"classes"];
++ (void)queryBizWithObjectId:(NSString *)objectId andBlock:(void(^)(PFObject *object, UIImage *mainImage, NSArray *classes, NSError *error))block{
+    
+    void(^retrieveClasses)(PFObject *object, UIImage *mainImage) = ^(PFObject *object, UIImage *mainImage) {
+        PFQuery *query = [PFQuery queryWithClassName:@"classes"];
+        query.cachePolicy = kPFCachePolicyCacheElseNetwork;
         [query whereKey:@"bizPointer" equalTo:object];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            query = [PFQuery queryWithClassName:@"images"];
-            [query whereKey:@"biz" equalTo:object];
-//            NSMutableArray *images = [NSMutableArray dictionary];
-//            [objects enumerateObjectsUsingBlock:^(PFObject *obj, NSUInteger idx, BOOL *stop) {
-//                if(obj[@"picture"]){
-//                    [(PFFile *)obj[@"picture"] getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-//                        if(data){
-//                            images[obj.objectId] = [UIImage imageWithData:data];
-//                        }
-//                        processedImageHandler();
-//                    }];
-//                }else{
-//                    processedImageHandler();
-//                }
-//            }];
-
-            block(object, mainImage, objects, classes, error);
+            block(object, mainImage, objects, error);
         }];
     };
-
-//    void(^retrievePictures)(PFObject *object, UIImage *mainImage, NSArray *classes) = ^(PFObject *object, UIImage *mainImage, NSArray *classes) {
-//        PFQuery *query = [PFQuery queryWithClassName:@"images"];
-//        [query whereKey:@"biz" equalTo:object];
-//        [query findObjectsInBackgroundWithBlock:^(NSArray *pictures, NSError *error) {
-//            block(object, mainImage, classes,pictures, error);
-//        }];
-//    };
-
+    
     PFQuery *query = [PFQuery queryWithClassName:@"biz"];
     query.cachePolicy = kPFCachePolicyCacheElseNetwork;
     [query getObjectInBackgroundWithId:objectId block:^(PFObject *object, NSError *error) {
         if(!object || error){
-            block(object, nil, nil, nil, error);
+            block(object, nil, nil, error);
         }else{
-            __block UIImage *image = nil;
-             if(object[@"picture"]){
+            if(object[@"picture"]){
+                __block UIImage *image = nil;
                 [(PFFile *)object[@"picture"] getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                     if(data){
                         image = [UIImage imageWithData:data];
                     }
                     if(error){
-                        block(object, image, nil, nil, error);
+                        block(object, image, nil, error);
                     }else{
-                        retrieveClassesPictures(object, image);
- //                       retrievePictures(object, image, classes);
+                        retrieveClasses(object, image);
                     }
                 }];
             }else{
-                retrieveClassesPictures(object, nil);
- //               retrievePictures(object, nil, classes);
+                retrieveClasses(object, nil);
             }
         }
     }];
