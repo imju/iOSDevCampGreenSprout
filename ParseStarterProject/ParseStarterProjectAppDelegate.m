@@ -13,6 +13,7 @@
 
 #import "ParseStarterProjectAppDelegate.h"
 #import "GSMainNavigationController.h"
+#import "GSFeedTableViewController.h"
 
 @interface ParseStarterProjectAppDelegate () <UITabBarControllerDelegate>
 
@@ -38,14 +39,17 @@
     UIViewController *homeViewController = [[GSMainNavigationController alloc] init];
     homeViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Home" image:[UIImage imageNamed:@"home-line"] tag:0];
     
-    UIViewController *feedViewController = [[UIViewController alloc] init];
-    feedViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Feed" image:[UIImage imageNamed:@"bell-line"] tag:0];
+    UIViewController *feedViewController = [[GSFeedTableViewController alloc] init];
+    
+    UINavigationController *feedNaviController = [[UINavigationController alloc] initWithRootViewController:feedViewController];
+    feedNaviController.navigationBar.barTintColor = [UIColor colorWithRed:0.44 green:0.66 blue:0.28 alpha:1];
+    feedNaviController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Feed" image:[UIImage imageNamed:@"bell-line"] tag:0];
 
     UIViewController *profileViewController = [[UIViewController alloc] init];
     profileViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Profile" image:[UIImage imageNamed:@"profile-line"] tag:0];
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.viewControllers = @[homeViewController, feedViewController, profileViewController];
+    tabBarController.viewControllers = @[homeViewController, feedNaviController, profileViewController];
     tabBarController.tabBar.tintColor = [UIColor colorWithRed:0.44 green:0.66 blue:0.28 alpha:1];
     tabBarController.delegate = self;
     self.viewController = tabBarController;

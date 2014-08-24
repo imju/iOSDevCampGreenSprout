@@ -37,6 +37,8 @@
 		743D7B6D157DA60100084B67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 743D7B6C157DA60100084B67 /* CoreGraphics.framework */; };
 		8112B17F19741BE700CA11B8 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8112B17E19741BE700CA11B8 /* ParseFacebookUtils.framework */; };
 		817AD67C196B009E0014C796 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817AD67B196B009E0014C796 /* Bolts.framework */; };
+		BD67442619AA70850038CEA8 /* GSFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD67442419AA70850038CEA8 /* GSFeedTableViewController.m */; };
+		BD67442719AA70850038CEA8 /* GSFeedTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD67442519AA70850038CEA8 /* GSFeedTableViewController.xib */; };
 		BDED087119A9410C005ACCF6 /* GSCitiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDED086F19A9410C005ACCF6 /* GSCitiesTableViewController.m */; };
 		BDED087219A9410C005ACCF6 /* GSCitiesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDED087019A9410C005ACCF6 /* GSCitiesTableViewController.xib */; };
 		BDED087A19A9513F005ACCF6 /* GSMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDED087919A9513F005ACCF6 /* GSMainNavigationController.m */; };
@@ -100,6 +102,9 @@
 		8112B17E19741BE700CA11B8 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		817AD67B196B009E0014C796 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		97E18B1E1624CB5700B17A67 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BD67442319AA70850038CEA8 /* GSFeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSFeedTableViewController.h; sourceTree = "<group>"; };
+		BD67442419AA70850038CEA8 /* GSFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSFeedTableViewController.m; sourceTree = "<group>"; };
+		BD67442519AA70850038CEA8 /* GSFeedTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSFeedTableViewController.xib; sourceTree = "<group>"; };
 		BDED086E19A9410C005ACCF6 /* GSCitiesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSCitiesTableViewController.h; sourceTree = "<group>"; };
 		BDED086F19A9410C005ACCF6 /* GSCitiesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSCitiesTableViewController.m; sourceTree = "<group>"; };
 		BDED087019A9410C005ACCF6 /* GSCitiesTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSCitiesTableViewController.xib; sourceTree = "<group>"; };
@@ -229,6 +234,9 @@
 				BDED089519A9A550005ACCF6 /* GSParseHelper.h */,
 				BDED089619A9A550005ACCF6 /* GSParseHelper.m */,
 				09ABC07813A1D52D009C3FCF /* Supporting Files */,
+				BD67442319AA70850038CEA8 /* GSFeedTableViewController.h */,
+				BD67442419AA70850038CEA8 /* GSFeedTableViewController.m */,
+				BD67442519AA70850038CEA8 /* GSFeedTableViewController.xib */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";
@@ -327,6 +335,7 @@
 				454B65B119AA5B3A00C5C07C /* soccer1.jpg in Resources */,
 				C4C51B591613CE0800959FDC /* Default@2x.png in Resources */,
 				BDED089919A9E0C6005ACCF6 /* bell-line@2x.png in Resources */,
+				BD67442719AA70850038CEA8 /* GSFeedTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +357,7 @@
 				09ABC08213A1D52D009C3FCF /* ParseStarterProjectAppDelegate.m in Sources */,
 				454B659419A966A200C5C07C /* GSBizDetailsHeaderView.m in Sources */,
 				454B659B19A97C3700C5C07C /* GSBizDetailsTableViewController.m in Sources */,
+				BD67442619AA70850038CEA8 /* GSFeedTableViewController.m in Sources */,
 				BDED087119A9410C005ACCF6 /* GSCitiesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
