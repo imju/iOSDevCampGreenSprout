@@ -124,6 +124,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:cell.bounds];
         searchBar.delegate = self;
+        searchBar.barTintColor = [UIColor colorWithRed:0.44 green:0.66 blue:0.28 alpha:1];
         [cell.contentView addSubview:searchBar];
         _searchCell = cell;
     }

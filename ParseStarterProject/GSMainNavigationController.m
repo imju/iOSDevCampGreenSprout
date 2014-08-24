@@ -32,6 +32,8 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
+    self.navigationBar.barTintColor = [UIColor colorWithRed:0.44 green:0.66 blue:0.28 alpha:1];
+    
     GSCitiesTableViewController *cities = [[GSCitiesTableViewController alloc] init];
     cities.title = self.selectedCity;  // HACK: to make the back button the city name
     cities.delegate = self;
