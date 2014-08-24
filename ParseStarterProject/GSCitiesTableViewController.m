@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    self.title = NSLocalizedString(@"Cities", @"Cities title");
+    self.navigationItem.title = NSLocalizedString(@"Cities", @"Cities title");
     
     self.cityNames = @[@"Cupertino", @"Mountain View", @"Palo Alto", @"San Francisco", @"San Jose", @"Sunnyvale"];
     
@@ -81,6 +81,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GSCitiesTableViewCell"];
     if(!cell){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"GSCitiesTableViewCell"];
+        cell.selectedBackgroundView = [[UIView alloc] init];
+        cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:0.44 green:0.66 blue:0.28 alpha:1];
     }
     
     if(self.selectedCity && indexPath.section == 0){

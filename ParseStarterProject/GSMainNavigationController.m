@@ -35,7 +35,7 @@
     self.navigationBar.barTintColor = [UIColor colorWithRed:0.44 green:0.66 blue:0.28 alpha:1];
     
     GSCitiesTableViewController *cities = [[GSCitiesTableViewController alloc] init];
-    cities.title = self.selectedCity;  // HACK: to make the back button the city name
+    cities.navigationItem.title = self.selectedCity;  // HACK: to make the back button the city name
     cities.delegate = self;
     GSHomeViewController *home = [[GSHomeViewController alloc] initWithCity:self.selectedCity];
     [self pushViewController:cities animated:NO];
@@ -49,13 +49,13 @@
 - (void)citiesTableViewController:(GSCitiesTableViewController *)controller didSelectCity:(NSString *)city{
     self.selectedCity = city;
     GSHomeViewController *home = [[GSHomeViewController alloc] initWithCity:city];
-    controller.title = city;  // HACK: to make the back button the city name
+    controller.navigationItem.title = city;  // HACK: to make the back button the city name
     [self pushViewController:home animated:YES];
 }
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
     if([viewController isKindOfClass:[GSCitiesTableViewController class]]){
-        viewController.title = @"Cities";  // HACK: to change the title back to "Cities"
+        viewController.navigationItem.title = @"Cities";  // HACK: to change the title back to "Cities"
         [(GSCitiesTableViewController *)viewController updateSelectedCity:self.selectedCity];
     }
 }

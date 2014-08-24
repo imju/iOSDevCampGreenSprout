@@ -14,6 +14,10 @@
 #import "ParseStarterProjectAppDelegate.h"
 #import "GSMainNavigationController.h"
 
+@interface ParseStarterProjectAppDelegate () <UITabBarControllerDelegate>
+
+@end
+
 @implementation ParseStarterProjectAppDelegate
 
 #pragma mark - UIApplicationDelegate
@@ -31,8 +35,22 @@
     [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
 
     // Override point for customization after application launch.
-    self.viewController = [[GSMainNavigationController alloc] init];
-    self.window.rootViewController = self.viewController;
+    UIViewController *homeViewController = [[GSMainNavigationController alloc] init];
+    homeViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Home" image:[UIImage imageNamed:@"home-line"] tag:0];
+    
+    UIViewController *feedViewController = [[UIViewController alloc] init];
+    feedViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Feed" image:[UIImage imageNamed:@"bell-line"] tag:0];
+
+    UIViewController *profileViewController = [[UIViewController alloc] init];
+    profileViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Profile" image:[UIImage imageNamed:@"profile-line"] tag:0];
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    tabBarController.viewControllers = @[homeViewController, feedViewController, profileViewController];
+    tabBarController.tabBar.tintColor = [UIColor colorWithRed:0.44 green:0.66 blue:0.28 alpha:1];
+    tabBarController.delegate = self;
+    self.viewController = tabBarController;
+    
+    self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
 
     if (application.applicationState != UIApplicationStateBackground) {
@@ -139,6 +157,10 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+}
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
+    return tabBarController.selectedViewController != viewController;
 }
 
 #pragma mark - ()

@@ -44,6 +44,9 @@
 		BDED088E19A99766005ACCF6 /* GSHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDED088C19A99766005ACCF6 /* GSHomeViewController.xib */; };
 		BDED089119A99B6A005ACCF6 /* GSHomeViewCategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDED089019A99B6A005ACCF6 /* GSHomeViewCategoryTableViewCell.m */; };
 		BDED089719A9A550005ACCF6 /* GSParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BDED089619A9A550005ACCF6 /* GSParseHelper.m */; };
+		BDED089919A9E0C6005ACCF6 /* bell-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BDED089819A9E0C6005ACCF6 /* bell-line@2x.png */; };
+		BDED089C19A9EBD0005ACCF6 /* home-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BDED089A19A9EBD0005ACCF6 /* home-line@2x.png */; };
+		BDED089D19A9EBD0005ACCF6 /* profile-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BDED089B19A9EBD0005ACCF6 /* profile-line@2x.png */; };
 		C4C51B571613CE0800959FDC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B541613CE0800959FDC /* Default.png */; };
 		C4C51B581613CE0800959FDC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B551613CE0800959FDC /* Default-568h@2x.png */; };
 		C4C51B591613CE0800959FDC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B561613CE0800959FDC /* Default@2x.png */; };
@@ -107,6 +110,9 @@
 		BDED089019A99B6A005ACCF6 /* GSHomeViewCategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSHomeViewCategoryTableViewCell.m; sourceTree = "<group>"; };
 		BDED089519A9A550005ACCF6 /* GSParseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSParseHelper.h; sourceTree = "<group>"; };
 		BDED089619A9A550005ACCF6 /* GSParseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSParseHelper.m; sourceTree = "<group>"; };
+		BDED089819A9E0C6005ACCF6 /* bell-line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bell-line@2x.png"; sourceTree = "<group>"; };
+		BDED089A19A9EBD0005ACCF6 /* home-line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-line@2x.png"; sourceTree = "<group>"; };
+		BDED089B19A9EBD0005ACCF6 /* profile-line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-line@2x.png"; sourceTree = "<group>"; };
 		C4C51B541613CE0800959FDC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		C4C51B551613CE0800959FDC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C4C51B561613CE0800959FDC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -222,6 +228,9 @@
 		09ABC07813A1D52D009C3FCF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BDED089A19A9EBD0005ACCF6 /* home-line@2x.png */,
+				BDED089B19A9EBD0005ACCF6 /* profile-line@2x.png */,
+				BDED089819A9E0C6005ACCF6 /* bell-line@2x.png */,
 				454B659619A9789500C5C07C /* 4star_445x103.png */,
 				C4C51B541613CE0800959FDC /* Default.png */,
 				C4C51B561613CE0800959FDC /* Default@2x.png */,
@@ -290,15 +299,18 @@
 				BDED088E19A99766005ACCF6 /* GSHomeViewController.xib in Resources */,
 				BDED087F19A9661C005ACCF6 /* GSBizTableViewController.xib in Resources */,
 				09ABC08513A1D52E009C3FCF /* MainWindow.xib in Resources */,
+				BDED089D19A9EBD0005ACCF6 /* profile-line@2x.png in Resources */,
 				BDED087219A9410C005ACCF6 /* GSCitiesTableViewController.xib in Resources */,
 				09144A7313C2997E00388B00 /* Entitlements.plist in Resources */,
 				454B659519A966A200C5C07C /* GSBizDetailsHeaderView.xib in Resources */,
 				C4C51B571613CE0800959FDC /* Default.png in Resources */,
 				BDED088419A966EB005ACCF6 /* GSBizTableViewCell.xib in Resources */,
 				C4C51B581613CE0800959FDC /* Default-568h@2x.png in Resources */,
+				BDED089C19A9EBD0005ACCF6 /* home-line@2x.png in Resources */,
 				454B659C19A97C3700C5C07C /* GSBizDetailsTableViewController.xib in Resources */,
 				454B65A119A97D1900C5C07C /* GSBizDetailsCell.xib in Resources */,
 				C4C51B591613CE0800959FDC /* Default@2x.png in Resources */,
+				BDED089919A9E0C6005ACCF6 /* bell-line@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
