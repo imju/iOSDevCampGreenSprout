@@ -12,6 +12,7 @@
 #import "GSBizTableViewCell.h"
 #import "GSParseHelper.h"
 #import "GSBizTableViewController.h"
+#import "GSBizDetailsTableViewController.h"
 
 @interface GSHomeViewController () <GSHomeViewCategoryTableViewCellDelegate, UISearchBarDelegate>
 
@@ -177,6 +178,13 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     GSBizTableViewController *controller = [[GSBizTableViewController alloc] initWithCity:self.city andSearchString:searchBar.text];
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.row >= 3){
+        GSBizDetailsTableViewController *controller = [[GSBizDetailsTableViewController alloc] initWithBizObjectId:((PFObject*)self.objects[indexPath.row-3]).objectId];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
 }
 
 /*

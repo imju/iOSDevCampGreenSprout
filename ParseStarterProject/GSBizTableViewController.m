@@ -10,6 +10,7 @@
 #import "GSBizTableViewController.h"
 #import "GSBizTableViewCell.h"
 #import "GSParseHelper.h"
+#import "GSBizDetailsTableViewController.h"
 
 @interface GSBizTableViewController ()
 
@@ -96,6 +97,11 @@
     cell.mainImageView.image = self.imageDictionary[object.objectId];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    GSBizDetailsTableViewController *controller = [[GSBizDetailsTableViewController alloc] initWithBizObjectId:((PFObject*)self.objects[indexPath.row]).objectId];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 /*
